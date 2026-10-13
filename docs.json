@@ -17,10 +17,7 @@
           "quickstart"
         ]
       },
-      {
-        "group": "API Reference",
-        "openapi": "api-docs.json"
-      }
+      "untitled-page"
     ],
     "global": {
       "anchors": [
