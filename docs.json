@@ -16,6 +16,10 @@
           "index",
           "quickstart"
         ]
+      },
+      {
+        "group": "API Reference",
+        "openapi": "api-docs.json"
       }
     ],
     "global": {
