@@ -943,25 +943,25 @@ paths:
               schema:
                 $ref: '#/components/schemas/ResOlcvVassetInfoList'
   /v2/api/coin/ohlcv/exchange:
-  post:
-    tags:
-      - Coin OHLCV
-    summary: 거래소별 OHLCV 조회
-    description: 거래소와 마켓 코드를 기준으로 최신 또는 과거 OHLCV 캔들을 조회합니다.
-    operationId: getOhlcvExchange
-    requestBody:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ReqOhlcvData'
-      required: true
-    responses:
-      '200':
-        description: 조회 처리 완료 (업무 오류는 rspCode로 반환)
+    post:
+      tags:
+        - Coin OHLCV
+      summary: 거래소별 OHLCV 조회
+      description: 거래소와 마켓 코드를 기준으로 최신 또는 과거 OHLCV 캔들을 조회합니다.
+      operationId: getOhlcvExchange
+      requestBody:
         content:
-          '*/*':
+          application/json:
             schema:
-              $ref: '#/components/schemas/ResKoreaStandardQuoteChartInfoList'
+              $ref: '#/components/schemas/ReqOhlcvData'
+        required: true
+      responses:
+        '200':
+          description: 조회 처리 완료 (업무 오류는 rspCode로 반환)
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResKoreaStandardQuoteChartInfoList'
   /v2/api/coin/ohlcv/exchange/vwap/list:
     post:
       tags:
