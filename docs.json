@@ -17,7 +17,12 @@
           "quickstart"
         ]
       },
-      "untitled-page"
+      {
+        "group": "마켓데이터",
+        "pages": [
+          "untitled-page"
+        ]
+      }
     ],
     "global": {
       "anchors": [
