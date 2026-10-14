@@ -20,7 +20,8 @@
       {
         "group": "마켓데이터",
         "pages": [
-          "untitled-page"
+          "untitled-page",
+          "ohlcv-vwap"
         ]
       }
     ],
