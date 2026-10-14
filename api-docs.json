@@ -3205,23 +3205,41 @@ components:
         - tranNo
     CandleDataVO:
       type: object
+      description: OHLCV 캔들
       properties:
         open:
           type: string
+          description: 시가
+          example: '93000000'
         high:
           type: string
+          description: 고가
+          example: '93500000'
         low:
           type: string
+          description: 저가
+          example: '92500000'
         close:
           type: string
+          description: 종가
+          example: '93200000'
         accTradeVol:
           type: string
+          description: 누적 거래량
+          example: '12.3456789'
         candleDateTimeKst:
           type: string
+          description: 캔들 시작 일시 (KST, yyyy-MM-dd HH:mm:ss)
+          example: '2026-10-14 14:30:00'
         timestamp:
           type: string
+          description: 캔들 생성 시각 (Unix epoch milliseconds)
+          example: '1791955800000'
         updateTs:
           type: string
+          nullable: true
+          description: 캔들 최종 변경 시각 (Unix epoch milliseconds). 생성 시각과 같으면 생략됩니다.
+          example: '1791955812345'
     ResOlcvVassetInfoList:
       type: object
       properties:
@@ -3310,34 +3328,52 @@ components:
             - M
     ResKoreaStandardQuoteChartInfoList:
       type: object
+      description: 거래소별 OHLCV 조회 응답
       properties:
         rspCode:
           type: string
+          description: 처리 결과 코드
+          example: A0000
         rspMessage:
           type: string
+          description: 처리 결과 메시지
+          example: 정상 처리되었습니다.
         dataList:
           type: array
+          description: 마켓별 OHLCV 목록
           items:
             $ref: '#/components/schemas/ResKoreaStandardQuoteChartInfoVO'
         dataListCnt:
           type: integer
           format: int32
+          description: 응답에 포함된 마켓 수
+          example: 1
     ResKoreaStandardQuoteChartInfoVO:
       type: object
+      description: 마켓별 OHLCV 데이터
       properties:
         marketCode:
           type: string
+          description: 마켓 코드
+          example: KRW-BTC
         assetId:
           type: string
+          description: 자산 ID
+          example: '1'
         exchangeNm:
           type: string
+          description: 거래소명
+          example: upbit
         candles:
           type: array
+          description: 최신순으로 정렬된 캔들 목록
           items:
             $ref: '#/components/schemas/CandleDataVO'
         candleCnt:
           type: integer
           format: int32
+          description: 캔들 수
+          example: 100
     ReqOhlcvRangeData:
       type: object
       properties:
