@@ -1,1 +1,3609 @@
-{"openapi":"3.1.0","info":{"title":"Dayfin Data API","description":"Dayfin market data API","version":"v2"},"servers":[{"url":"https://dev.dayfin.io","description":"Generated server url"}],"security":[{"bearerAuth":[]}],"paths":{"/v2/api/wallet/jump":{"post":{"tags":["wallet-controller"],"operationId":"selectNoticeDetail","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqWalletDetail"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResWalletDetail"}}}}}}},"/v2/api/wallet/jumpCoin":{"post":{"tags":["wallet-controller"],"operationId":"getJumpCoinDetail","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqWalletDetail"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResDepoWdrwJump"}}}}}}},"/v2/api/trend/rank/score":{"post":{"tags":["trend-data-controller"],"operationId":"getTrendRankScore","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqTrendRank"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResTrendData"}}}}}}},"/v2/api/trend/rank/count":{"post":{"tags":["trend-data-controller"],"operationId":"getTrendRankCount","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqTrendRank"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResTrendData"}}}}}}},"/v2/api/trend/fear-greed":{"post":{"tags":["trend-data-controller"],"operationId":"getFearGreedIndex","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqFearGreedIndex"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResFearGreedIndex"}}}}}}},"/v2/api/trend/dasi":{"post":{"tags":["trend-data-controller"],"operationId":"getDASI","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqTrendData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResTrendData"}}}}}}},"/v2/api/trend/daai":{"post":{"tags":["trend-data-controller"],"operationId":"getDAAI","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqTrendData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResTrendData"}}}}}}},"/v2/api/trade/vwap":{"post":{"tags":["trade-data-controller"],"operationId":"inqVwapTradePrice","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqLatestData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapTrade"}}}}}}},"/v2/api/trade/vwapCur":{"post":{"tags":["trade-data-controller"],"operationId":"inqVwapCurTradePrice","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqLatestData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapCurTrade"}}}}}}},"/v2/api/trade/symbol/daily/latest":{"post":{"tags":["trade-data-controller"],"operationId":"inqSymbolDailyTradeLatest","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqSymbolDailyTradeLatest"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResSymbolDailyTradeLatest"}}}}}}},"/v2/api/trade/symbol/daily/history":{"post":{"tags":["trade-data-controller"],"operationId":"inqSymbolDailyTradeHistory","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqSymbolDailyTradeHistory"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResSymbolDailyTradeHistory"}}}}}}},"/v2/api/trade/marketcode":{"post":{"tags":["trade-data-controller"],"operationId":"inqMarketCodeTradePrice","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqLatestDataForMarket"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ByMarketCode"}}}}}}},"/v2/api/trade/exchange":{"post":{"tags":["trade-data-controller"],"operationId":"inqExchangeTradePrice","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqLatestData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResExchangeTrade"}}}}}}},"/v2/api/trade/exchange/history":{"post":{"tags":["trade-data-controller"],"operationId":"inqExchangeTradeHistory","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeTradeHistory"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResExchangeTradeHistory"}}}}}}},"/v2/api/trade/exchange/daily/latest":{"post":{"tags":["trade-data-controller"],"operationId":"inqExchangeDailyTradeLatest","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeDailyTradeLatest"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResExchangeDailyTradeLatest"}}}}}}},"/v2/api/trade/exchange/daily/history":{"post":{"tags":["trade-data-controller"],"operationId":"inqExchangeDailyTradeHistory","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeDailyTradeHistory"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResExchangeDailyTradeHistory"}}}}}}},"/v2/api/sync/orgReload":{"post":{"tags":["sync-controller"],"operationId":"orgReloadProc","responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"string"}}}}}}},"/v2/api/orderbook/snapshot":{"post":{"tags":["order-book-controller"],"operationId":"inqOrderBookSnapshot","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOrderBookSnapshot"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResOrderBookSnapshot"}}}}}}},"/v2/api/orderbook/aggregation":{"post":{"tags":["order-book-controller"],"operationId":"inqOrderBookAggregation","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOrderBookDelta"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResOrderBookDelta"}}}}}}},"/v2/api/notice/list":{"post":{"tags":["notice-controller"],"operationId":"selectNoticeDetail_1","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/NoticeResponse"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/NoticeResponse"}}}}}}},"/v2/api/news/coin":{"post":{"tags":["news-controller"],"operationId":"selectCoinNewsDetail","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqCoinNews"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResCoinNews"}}}}}}},"/v2/api/news/coin/issue":{"post":{"tags":["news-controller"],"operationId":"selectIssueCoinNewsDetail","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqCoinNews"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResCoinNews"}}}}}}},"/v2/api/msg/sendTelegram":{"post":{"tags":["message-controller"],"operationId":"sendTelegramMessage","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqTeleMsg"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ApiResponse"}}}}}}},"/v2/api/coinRank/vwap/value":{"post":{"tags":["coin-rank-controller"],"operationId":"getVwapValue","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqRankVwapValue"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapValue"}}}}}}},"/v2/api/coinRank/vwap/rateUpDwn":{"post":{"tags":["coin-rank-controller"],"operationId":"getVwapRateUpAndDown","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqRankUpDownMarket"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapRank"}}}}}}},"/v2/api/coinRank/volume":{"post":{"tags":["coin-rank-controller"],"operationId":"getAmount","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeNm"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResRank"}}}}}}},"/v2/api/coinRank/sharp/volume":{"post":{"tags":["coin-rank-controller"],"operationId":"getSharpVolume","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqRankInterval"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResRank"}}}}}}},"/v2/api/coinRank/sharp/price":{"post":{"tags":["coin-rank-controller"],"operationId":"getSharpVolume_1","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqRankUPDown"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResRank"}}}}}}},"/v2/api/coinRank/rateUpDwn":{"post":{"tags":["coin-rank-controller"],"operationId":"getRateUpAndDown","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqRankUpDownMarket"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResRank"}}}}}}},"/v2/api/coinRank/askUp":{"post":{"tags":["coin-rank-controller"],"operationId":"getAskUp","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeNm"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResRank"}}}}}}},"/v2/api/coinInfo/spot/etf/flow":{"post":{"tags":["coin-info-controller"],"operationId":"getSpotEtfFlow","responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResSpotEtfFlow"}}}}}}},"/v2/api/coinInfo/premium":{"post":{"tags":["coin-info-controller"],"operationId":"getPremium","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqPremium"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResPremium"}}}}}}},"/v2/api/coinInfo/premiumAll":{"post":{"tags":["coin-info-controller"],"operationId":"getPremium_1","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqPremiumAll"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResPremiumAll"}}}}}}},"/v2/api/coinInfo/market":{"post":{"tags":["coin-info-controller"],"operationId":"getCoinInfoForMarket","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqCoinInfoMarket"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResCoinInfoMarket"}}}}}}},"/v2/api/coinInfo/marketCap":{"post":{"tags":["coin-info-controller"],"operationId":"inqMarketCapRank","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqMarketCapRank"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResMarketCapRank"}}}}}}},"/v2/api/coinInfo/market/vwap":{"post":{"tags":["coin-info-controller"],"operationId":"getMarketPairVwap","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqVwapCoinInfo"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResMarketVwap"}}}}}}},"/v2/api/coinInfo/market/pair":{"post":{"tags":["coin-info-controller"],"operationId":"getMarketPair","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqCoinInfo"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResMarketPair"}}}}}}},"/v2/api/coinInfo/map":{"post":{"tags":["coin-info-controller"],"operationId":"getCoinInfoMap","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqCoinInfoMap"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResCoinInfoMap"}}}}}}},"/v2/api/coinInfo/krw/DWSoar":{"post":{"tags":["coin-info-controller"],"operationId":"getKrwDepoWdrwSoar","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqKrwDepoWdrwSoar"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResKrwDepoWdrwSoar"}}}}}}},"/v2/api/coinInfo/krw/DWIntst":{"post":{"tags":["coin-info-controller"],"operationId":"getKrwDepoWdrwIntensity","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqKrwDepoWdrwIntensity"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResKrwDepoWdrwIntensity"}}}}}}},"/v2/api/coinInfo/kdacs/classification":{"post":{"tags":["coin-info-controller"],"operationId":"getKdacsClassification","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqKdacsClassification"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResKdacsClassification"}}}}}}},"/v2/api/coinInfo/hist/krw/DWIntst":{"post":{"tags":["coin-info-controller"],"operationId":"getHistKrwDepoWdrwIntensity","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}}},"/v2/api/coinInfo/hist/dom":{"post":{"tags":["coin-info-controller"],"operationId":"getHistBtcDominance","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqHistBtcDominance"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}}},"/v2/api/coinInfo/hist/btcDomc":{"post":{"tags":["coin-info-controller"],"operationId":"getHistKBtcTradingShare","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqHistBtcDominance"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}}},"/v2/api/coinInfo/global/marketCap":{"post":{"tags":["coin-info-controller"],"operationId":"getGlobalMarketCap","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqGlobalMarketCap"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResGlobalMarketCap"}}}}}}},"/v2/api/coinInfo/global/dailyTradeAmount":{"post":{"tags":["coin-info-controller"],"operationId":"getGlobalDailyTradeAmount","responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResGlobalDailyTradeAmount"}}}}}}},"/v2/api/coinInfo/exchange/rate":{"post":{"tags":["coin-info-controller"],"operationId":"inqExchangeRate","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeRate"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResExchangeRate"}}}}}}},"/v2/api/coinInfo/dom":{"post":{"tags":["coin-info-controller"],"operationId":"getBtcDominance","responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResBtcDominance"}}}}}}},"/v2/api/coinInfo/btcDmnc":{"post":{"tags":["coin-info-controller"],"operationId":"getKBtcTradingShare","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeNm"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResTradingShare"}}}}}}},"/v2/api/coin/ohlcv/vwap":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvVwap","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOhlcvVwapData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResOlcvVwapInfoList"}}}}}}},"/v2/api/coin/ohlcv/vwap/list":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvVwapList","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOhlcvListData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResOlcvVwapInfoList"}}}}}}},"/v2/api/coin/ohlcv/vwap/close":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvVwapClose","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqVwapDailyClose"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapDailyClose"}}}}}}},"/v2/api/coin/ohlcv/vasset":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvVasset","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOhlcvVassetData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResOlcvVassetInfoList"}}}}}}},"/v2/api/coin/ohlcv/exchange":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvExchange","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOhlcvData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResKoreaStandardQuoteChartInfoList"}}}}}}},"/v2/api/coin/ohlcv/exchange/vwap/list":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvExchangeVwapList","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOhlcvRangeData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResOhlcvChartInfoList"}}}}}}},"/v2/api/coin/ohlcv/exchange/list":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvExchangeList","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqOhlcvListData"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResOhlcvChartInfoList"}}}}}}},"/v2/api/coin/ohlcv/exchange/close":{"post":{"tags":["coin-ohlcv-controller"],"operationId":"getOhlcvExchangeClose","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqExchangeDailyClose"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResExchangeDailyClose"}}}}}}},"/v2/api/asp/trading/signal":{"post":{"tags":["asp-coin-insight-controller"],"operationId":"getTradingSignal","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqAspTradingSignal"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResAspTradingSignal"}}}}}}},"/v2/api/asp/coin/prevPrice":{"post":{"tags":["asp-coin-insight-controller"],"operationId":"getPreClosePrices","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqYearlyPriceSingle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResPrevPrice"}}}}}}},"/v2/api/asp/coin/indicator/vwap":{"post":{"tags":["asp-coin-insight-controller"],"operationId":"sendVwapCoinIndicator","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqYearlyPriceBulk"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapValue"}}}}}}},"/v2/api/asp/coin/indicator/exchange":{"post":{"tags":["asp-coin-insight-controller"],"operationId":"sendExchangeCoinIndicator","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqYearlyPriceBulk"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapValue"}}}}}}},"/v2/api/asp/coin/indicator/all":{"post":{"tags":["asp-coin-insight-controller"],"operationId":"sendAllAndMarketCoinIndicator","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqYearlyPriceSingle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResVwapValue"}}}}}}},"/v2/api/coinInfo/company/treasury":{"get":{"tags":["coin-info-controller"],"operationId":"getCompanyCryptoTreasury","responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResCompanyCryptoTreasury"}}}}}}},"/v2.1/asp/coins/{assetId}/indicators/high-low":{"get":{"tags":["asp-coin-indicator-rest-controller"],"operationId":"getHighLowByAsset","parameters":[{"name":"assetId","in":"path","required":true,"schema":{"type":"integer","format":"int64"}},{"name":"exchangeNm","in":"query","required":false,"schema":{"type":"string","default":"ALL"}},{"name":"startDtm","in":"query","required":false,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResCoinHighLow"}}}}}}},"/v2.1/asp/coins/indicators/high-low":{"get":{"tags":["asp-coin-indicator-rest-controller"],"operationId":"getHighLow","parameters":[{"name":"assetIds","in":"query","required":false,"schema":{"type":"array","items":{"type":"integer","format":"int64"}}},{"name":"exchangeNm","in":"query","required":false,"schema":{"type":"string","default":"ALL"}},{"name":"startDtm","in":"query","required":false,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResCoinHighLow"}}}}}}},"/v2/api/article":{"get":{"tags":["article-controller"],"operationId":"sendContents","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}},"put":{"tags":["article-controller"],"operationId":"sendContents_2","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}},"post":{"tags":["article-controller"],"operationId":"sendContents_1","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}},"delete":{"tags":["article-controller"],"operationId":"sendContents_3","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}},"options":{"tags":["article-controller"],"operationId":"sendContents_6","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}},"head":{"tags":["article-controller"],"operationId":"sendContents_5","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}},"patch":{"tags":["article-controller"],"operationId":"sendContents_4","requestBody":{"content":{"application/json":{"schema":{"$ref":"#/components/schemas/ReqArticle"}}},"required":true},"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"$ref":"#/components/schemas/ResArticle"}}}}}}}},"components":{"schemas":{"ReqWalletDetail":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"sourUnit":{"type":"string"},"dwType":{"type":"string"},"assetSymbol":{"type":"string"},"assetSymbols":{"type":"array","items":{"type":"string"}},"hourUnit":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResWalletDetail":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"contents":{"type":"array","items":{"$ref":"#/components/schemas/WalletInfoDetail"}}}},"WalletInfoDetail":{"type":"object","properties":{"nowCnt":{"type":"number"},"beforeCnt":{"type":"number"},"balcDtm":{"type":"string"},"exchangeCd":{"type":"string"},"symbol":{"type":"string"},"snapshotCnt":{"type":"number"},"type":{"type":"string"},"id":{"type":"integer","format":"int32"},"blockNum":{"type":"integer","format":"int32"},"fromAddress":{"type":"string"},"fromTag":{"type":"string"},"toAddress":{"type":"string"},"toTag":{"type":"string"},"value":{"type":"number"},"txHash":{"type":"string"},"blockTime":{"type":"string"},"price":{"type":"number"},"assetSymbol":{"type":"string"}}},"JumpInfo":{"type":"object","properties":{"assetSymbol":{"type":"string"},"dwType":{"type":"string"},"sharpYn":{"type":"string"},"changeRate":{"type":"string"},"timestamp":{"type":"integer","format":"int64"}}},"ResDepoWdrwJump":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/JumpInfo"}}}},"ReqTrendRank":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResTrendData":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ReqFearGreedIndex":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"count":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"FearGreedIndexData":{"type":"object","properties":{"fgi":{"type":"string"},"fgiClassification":{"type":"string"},"date":{"type":"string"}}},"ResFearGreedIndex":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataListCnt":{"type":"integer","format":"int32"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/FearGreedIndexData"}}}},"ReqTrendData":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"ReqLatestData":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"marketCodes":{"type":"array","items":{"type":"string"}},"sort":{"type":"string"},"quoteCurrency":{"type":"string"},"currCode":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResTickerOut":{"type":"object","properties":{"assetSymbol":{"type":"string"},"assetId":{"type":"integer","format":"int64"},"marketCode":{"type":"string"},"tradePrice":{"type":"string"},"open":{"type":"string"},"high":{"type":"string"},"low":{"type":"string"},"change":{"type":"string"},"changeRate":{"type":"string"},"flag":{"type":"string"},"accTradeValue":{"type":"string"},"accTradeVol":{"type":"string"},"tradeVol":{"type":"string"},"accBuyVol":{"type":"string"},"accSellVol":{"type":"string"},"highest52WeekPrice":{"type":"string"},"highest52WeekDate":{"type":"string"},"lowest52WeekPrice":{"type":"string"},"lowest52WeekDate":{"type":"string"},"preClosedPrice":{"type":"string"},"timestamp":{"type":"integer","format":"int64"},"exchangeTs":{"type":"integer","format":"int64"},"premium":{"type":"object","additionalProperties":{"$ref":"#/components/schemas/VwapPremiumEntryDto"}}}},"ResVwapTrade":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/ResTickerOut"}},"dataListCnt":{"type":"integer","format":"int32"}}},"VwapPremiumEntryDto":{"type":"object","properties":{"premium":{"type":"string"},"preminumRate":{"type":"string"}}},"ResVwapCurTrade":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{},"properties":{"empty":{"type":"boolean"},"first":{},"last":{}}},"dataListCnt":{"type":"integer","format":"int32"}}},"ReqSymbolDailyTradeLatest":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"reqTp":{"type":"string"},"marketCode":{"type":"string"},"exchangeNms":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"ResSymbolDailyTradeLatest":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"reqTp":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/TradeSymbolLatest"}}}},"TradeSymbolLatest":{"type":"object","properties":{"marketCode":{"type":"string"},"exchangeNm":{"type":"string"},"accTradeValue":{"type":"string"},"timestamp":{"type":"integer","format":"int64"},"assetId":{"type":"integer","format":"int64"}}},"ReqSymbolDailyTradeHistory":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"marketCode":{"type":"string"},"reqTp":{"type":"string"},"exchangeNms":{"type":"array","items":{"type":"string"}},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResSymbolDailyTradeHistory":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"reqTp":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/TradeDateCategory"}}}},"TradeDateCategory":{"type":"object","properties":{"tradeDate":{"type":"string"},"tradeData":{"type":"array","items":{},"properties":{"empty":{"type":"boolean"},"first":{},"last":{}}}}},"ReqLatestDataForMarket":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNms":{"type":"array","items":{"type":"string"}},"marketCode":{"type":"string"},"sort":{"type":"string"},"currCode":{"type":"string"}},"required":["tranDtime","tranNo"]},"ByMarketCode":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{},"properties":{"empty":{"type":"boolean"},"first":{},"last":{}}},"dataListCnt":{"type":"integer","format":"int32"}}},"ResExchangeTrade":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{},"properties":{"empty":{"type":"boolean"},"first":{},"last":{}}},"dataListCnt":{"type":"integer","format":"int32"},"quoteCurrency":{"type":"string"}}},"ReqExchangeTradeHistory":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"marketCode":{"type":"string"},"lastTranDtm":{"type":"string"},"count":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResExchangeTradeHistory":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"exchangeNm":{"type":"string"},"marketCode":{"type":"string"},"assetId":{"type":"string"},"lastTranDtm":{"type":"string"},"tradeCount":{"type":"integer","format":"int32"},"trade":{"type":"array","items":{"$ref":"#/components/schemas/TradeHistory"}}}},"TradeHistory":{"type":"object","properties":{"tradePrice":{"type":"string"},"tradeVol":{"type":"string"},"tradeTp":{"type":"string"},"tradeDtm":{"type":"string"},"sequenceId":{"type":"string"},"exchangeTs":{"type":"integer","format":"int64"},"timestamp":{"type":"integer","format":"int64"}}},"ReqExchangeDailyTradeLatest":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"reqTp":{"type":"string"},"exchangeNms":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"ResExchangeDailyTradeLatest":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"reqTp":{"type":"string"},"gaccTradeValue":{"type":"string"},"timestamp":{"type":"integer","format":"int64"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/TradeLatest"}}}},"TradeLatest":{"type":"object","properties":{"accTradeValue":{"type":"string"},"exchangeNm":{"type":"string"},"timestamp":{"type":"integer","format":"int64"}}},"ReqExchangeDailyTradeHistory":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"reqTp":{"type":"string"},"exchangeNms":{"type":"array","items":{"type":"string"}},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResExchangeDailyTradeHistory":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"reqTp":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/TradeData"}}}},"TradeData":{"type":"object","properties":{"tradeDate":{"type":"string"},"tradeData":{"type":"array","items":{"$ref":"#/components/schemas/TradeHistory"}}}},"ReqOrderBookSnapshot":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string","minLength":1},"marketCodes":{"type":"array","items":{"type":"string"},"minItems":1},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["exchangeNm","marketCodes","tranDtime","tranNo"]},"PriceSize":{"type":"object","properties":{"price":{"type":"number"},"size":{"type":"number"}}},"ResOrderBookSnapshot":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/SnapshotItem"}},"dataListCnt":{"type":"integer","format":"int32"}}},"SnapshotItem":{"type":"object","properties":{"assetId":{"type":"integer","format":"int64"},"marketCode":{"type":"string"},"exchangeNm":{"type":"string"},"timestamp":{"type":"integer","format":"int64"},"totalAskSize":{"type":"number"},"totalBidSize":{"type":"number"},"asks":{"type":"array","items":{"$ref":"#/components/schemas/PriceSize"}},"bids":{"type":"array","items":{"$ref":"#/components/schemas/PriceSize"}}}},"ReqOrderBookDelta":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string","minLength":1},"marketCodes":{"type":"array","items":{"type":"string"},"minItems":1},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["exchangeNm","marketCodes","tranDtime","tranNo"]},"DeltaItem":{"type":"object","properties":{"exchangeNm":{"type":"string"},"marketCode":{"type":"string"},"ts":{"type":"integer","format":"int64"},"wsTs":{"type":"integer","format":"int64"},"totalAskSize":{"type":"number"},"totalBidSize":{"type":"number"},"asks":{"type":"array","items":{"$ref":"#/components/schemas/PriceSize"}},"bids":{"type":"array","items":{"$ref":"#/components/schemas/PriceSize"}}}},"ResOrderBookDelta":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/DeltaItem"}},"dataListCnt":{"type":"integer","format":"int32"}}},"NoticeInfo":{"type":"object","properties":{"link":{"type":"string"},"exchangeCd":{"type":"string"},"exchangeNm":{"type":"string"},"category":{"type":"string"},"title":{"type":"string"},"regDt":{"type":"string"},"status":{"type":"string"},"statusRegDt":{"type":"string"},"code":{"type":"string"},"content":{"type":"string"}}},"NoticeResponse":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"contents":{"type":"array","items":{"$ref":"#/components/schemas/NoticeInfo"}}}},"ReqCoinNews":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"assetSymbols":{"type":"array","items":{"type":"string"}},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResCoinNews":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ReqTeleMsg":{"type":"object","properties":{"header":{"type":"string"},"msg":{"type":"string"}},"required":["header","msg"]},"ApiResponse":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"}}},"ReqVwapCacheEvictData":{"type":"object","properties":{"period":{"type":"string"},"priceId":{"type":"string"},"productId":{"type":"string"},"startKst":{"type":"string"},"endKst":{"type":"string"}}},"ResVwapCacheEvictData":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"deletedCount":{"type":"integer","format":"int32"},"deletedKeys":{"type":"array","items":{"type":"string"}}}},"MessageTranVO":{"type":"object","properties":{"regDt":{"type":"string"},"seq":{"type":"integer","format":"int64"},"sendTp":{"type":"string"},"trgtNm":{"type":"string"},"trgtInfo":{"type":"string"},"title":{"type":"string"},"msg":{"type":"string"},"stat":{"type":"string"},"regDtm":{"type":"string"},"updDtm":{"type":"string"}}},"CommResponse":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"}}},"ReqExchangeCacheEvictData":{"type":"object","properties":{"period":{"type":"string"},"priceId":{"type":"string"},"productId":{"type":"string"},"exchangeCd":{"type":"string"},"startKst":{"type":"string"},"endKst":{"type":"string"}}},"ReqRankVwapValue":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1}},"required":["tranDtime","tranNo"]},"ResVwapValue":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ReqRankUpDownMarket":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"upOrDown":{"type":"string"},"quoteCurrency":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResVwapRank":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ReqExchangeNm":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"quoteCurrency":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResRank":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{}},"exchangeNm":{"type":"string"}}},"ReqRankInterval":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"minUnit":{"type":"string"},"exchangeNm":{"type":"string"},"quoteCurrency":{"type":"string"}},"required":["tranDtime","tranNo"]},"ReqRankUPDown":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"minUnit":{"type":"string"},"upOrDown":{"type":"string"},"exchangeNm":{"type":"string"},"quoteCurrency":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResSpotEtfFlow":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataListCnt":{"type":"integer","format":"int32"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/SpotEtfFlowData"}}}},"SpotEtfFlowData":{"type":"object","properties":{"date":{"type":"string"},"btcNetInflowKrw":{"type":"string"},"ethNetInflowKrw":{"type":"string"},"totalNetInflowKrw":{"type":"string"}}},"ReqPremium":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"pair":{"type":"string"},"assetSymbols":{"type":"array","items":{"type":"string"}},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"DataGroupByMarketCode":{"type":"object","properties":{"assetSymbol":{"type":"string"},"data":{"type":"array","items":{"$ref":"#/components/schemas/PremiumData"}}}},"PremiumData":{"type":"object","properties":{"date":{"type":"string"},"premium":{"type":"string"},"premiumRate":{"type":"string"}}},"ResPremium":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"pair":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/DataGroupByMarketCode"}}}},"ReqPremiumAll":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"assetSymbols":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"PremiumDataDTO":{"type":"object","properties":{"assetSymbol":{"type":"string"},"premium":{"type":"string"},"premiumRate":{"type":"string"}}},"ResPremiumAll":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/PremiumDataDTO"}},"dataListCnt":{"type":"integer","format":"int32"},"timestamp":{"type":"integer","format":"int64"}}},"ReqCoinInfoMarket":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"assetIds":{"type":"array","items":{"type":"integer","format":"int64"}}},"required":["tranDtime","tranNo"]},"CoinDetail":{"type":"object","properties":{"assetSymbol":{"type":"string"},"assetId":{"type":"integer","format":"int64"},"englishName":{"type":"string"},"koreanName":{"type":"string"},"imgLink":{"type":"string"},"imgLinkHd":{"type":"string"},"marketCap":{"type":"string"},"totalSupply":{"type":"string"},"circulatingSupply":{"type":"string"},"profile":{"type":"string"}}},"ResCoinInfoMarket":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"exchangeNm":{"type":"string"},"dataListCnt":{"type":"integer","format":"int32"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/CoinDetail"}}}},"ReqMarketCapRank":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResMarketCapRank":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"exchangeNm":{"type":"string"},"timestamp":{"type":"integer","format":"int64"},"dataList":{"type":"array","items":{}}}},"ReqVwapCoinInfo":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"assetSymbols":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"CoinVwapInfo":{"type":"object","properties":{"assetSymbol":{"type":"string"},"assetId":{"type":"integer","format":"int64"},"englishName":{"type":"string"},"koreanName":{"type":"string"},"marketCodes":{"type":"object","additionalProperties":{},"properties":{"empty":{"type":"boolean"}}},"startDt":{"type":"string"},"endDt":{"type":"string"}}},"ResMarketVwap":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataListCnt":{"type":"integer","format":"int32"},"activeAssetCnt":{"type":"integer","format":"int32"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/CoinVwapInfo"}}}},"ReqCoinInfo":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"quoteCurrency":{"type":"string"},"marketCodes":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"CoinInfo":{"type":"object","properties":{"marketCode":{"type":"string"},"assetSymbol":{"type":"string"},"assetId":{"type":"integer","format":"int64"},"koreanName":{"type":"string"},"englishName":{"type":"string"},"listedDt":{"type":"string"},"delistedDt":{"type":"string"}}},"ResMarketPair":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"exchangeNm":{"type":"string"},"exchangeImgLink":{"type":"string"},"activeMarketCnt":{"type":"integer","format":"int32"},"dataListCnt":{"type":"integer","format":"int32"},"quoteCurrency":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/CoinInfo"}}}},"ReqCoinInfoMap":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"assetSymbols":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"CoinMap":{"type":"object","properties":{"assetSymbol":{"type":"string"},"assetId":{"type":"integer","format":"int64"},"englishName":{"type":"string"},"koreanName":{"type":"string"},"marketCodes":{"type":"array","items":{"type":"string"}},"imgLink":{"type":"string"},"imgLinkHd":{"type":"string"}}},"ResCoinInfoMap":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataCnt":{"type":"integer","format":"int32"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/CoinMap"}}}},"ReqKrwDepoWdrwSoar":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"soarUnit":{"type":"string"},"dwType":{"type":"string"},"hourUnit":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResKrwDepoWdrwSoar":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dwType":{"type":"string"},"hourUnit":{"type":"string"},"depositSoar":{"type":"string"},"depositSharp":{"type":"string"},"withdrawSoar":{"type":"string"},"withdrawSharp":{"type":"string"},"timestamp":{"type":"integer","format":"int64"}}},"ReqKrwDepoWdrwIntensity":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"hourUnit":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResKrwDepoWdrwIntensity":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"hourUnit":{"type":"string"},"dwPower":{"type":"string"},"depositRate":{"type":"string"},"withdrawRate":{"type":"string"},"timestamp":{"type":"integer","format":"int64"}}},"ReqKdacsClassification":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"assetId":{"type":"string","minLength":1}},"required":["assetId","tranDtime","tranNo"]},"RepresentativeAsset":{"type":"object","properties":{"displayOrder":{"type":"integer","format":"int32"},"assetId":{"type":"string"},"assetSymbol":{"type":"string"}}},"ResKdacsClassification":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"assetId":{"type":"string"},"assetSymbol":{"type":"string"},"majorCode":{"type":"string"},"majorName":{"type":"string"},"middleCode":{"type":"string"},"middleName":{"type":"string"},"minorCode":{"type":"string"},"minorName":{"type":"string"},"definition":{"type":"string"},"representativeAssets":{"type":"array","items":{"$ref":"#/components/schemas/RepresentativeAsset"}}}},"ReqArticle":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"startDt":{"type":"string"},"endDt":{"type":"string"},"pressCds":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"ResArticle":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ReqHistBtcDominance":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"ReqGlobalMarketCap":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"currCodes":{"type":"array","items":{"type":"string"}},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResGlobalMarketCap":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ResGlobalDailyTradeAmount":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"totalVolume24hKRW":{"type":"string"},"totalVolume24hYesterdayPercentageChange":{"type":"string"}}},"ReqExchangeRate":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"currCodes":{"type":"array","items":{"type":"string"}},"startDt":{"type":"string"},"endDt":{"type":"string"}},"required":["tranDtime","tranNo"]},"ExchangeInfos":{"type":"object","properties":{"date":{"type":"string"},"currListCnt":{"type":"integer","format":"int32"},"currList":{"type":"array","items":{"$ref":"#/components/schemas/RateInfo"}}}},"RateInfo":{"type":"object","properties":{"currCode":{"type":"string"},"currName":{"type":"string"},"dealBaseRate":{"type":"string"},"change":{"type":"string"},"flag":{"type":"string"}}},"ResExchangeRate":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/ExchangeInfos"}},"dataListCnt":{"type":"integer","format":"int32"}}},"ResBtcDominance":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"kbtcDominance":{"type":"string"},"gbtcDominance":{"type":"string"}}},"ResTradingShare":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"kbtcTradingShare":{"type":"string"},"kethTradingShare":{"type":"string"},"timestamp":{"type":"integer","format":"int64"},"exchangeNm":{"type":"string"}}},"ReqOhlcvVwapData":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"marketCode":{"type":"string"},"marketCodes":{"type":"array","items":{"type":"string"}},"assetIds":{"type":"array","items":{"type":"integer","format":"int64"}},"currCodes":{"type":"array","items":{"type":"string"}},"lastCandleDtm":{"type":"string"},"limit":{"type":"string"},"candleUnit":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResOlcvVwapInfoList":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/ResOlcvVwapInfoVO"}},"dataListCnt":{"type":"integer","format":"int32"}}},"ResOlcvVwapInfoVO":{"type":"object","properties":{"currCode":{"type":"string"},"marketCode":{"type":"string"},"assetId":{"type":"string"},"candles":{"type":"array","items":{"$ref":"#/components/schemas/VwapCandleDataVO"}},"candleCnt":{"type":"integer","format":"int32"}}},"VwapCandleDataVO":{"type":"object","properties":{"open":{"type":"string"},"high":{"type":"string"},"low":{"type":"string"},"close":{"type":"string"},"accTradeVol":{"type":"string"},"accTradeValue":{"type":"string"},"candleDateTimeKst":{"type":"string"},"timestamp":{"type":"string"},"updateTs":{"type":"string"}}},"ReqOhlcvListData":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"marketCodes":{"type":"array","items":{"type":"string"}},"exchangeNm":{"type":"string"},"lastCandleDtm":{"type":"string","maxLength":12,"minLength":0},"limit":{"type":"string"},"candleUnit":{"type":"string"}},"required":["tranDtime","tranNo"]},"ReqVwapDailyClose":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"endDt":{"type":"string"},"count":{"type":"integer","format":"int32"},"assetSymbol":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResVwapDailyClose":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"assetId":{"type":"string"},"assetSymbol":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/VwapDailyCloseDataVO"}}}},"VwapDailyCloseDataVO":{"type":"object","properties":{"date":{"type":"string"},"closePrice":{"type":"string"}}},"ReqOhlcvVassetData":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"marketCode":{"type":"string"},"exchangeNms":{"type":"array","items":{"type":"string"}},"lastCandleDtm":{"type":"string"},"limit":{"type":"string"},"candleUnit":{"type":"string"}},"required":["tranDtime","tranNo"]},"CandleDataVO":{"type":"object","properties":{"open":{"type":"string"},"high":{"type":"string"},"low":{"type":"string"},"close":{"type":"string"},"accTradeVol":{"type":"string"},"candleDateTimeKst":{"type":"string"},"timestamp":{"type":"string"},"updateTs":{"type":"string"}}},"ResOlcvVassetInfoList":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/ResOlcvVassetInfoVO"}},"dataListCnt":{"type":"integer","format":"int32"}}},"ResOlcvVassetInfoVO":{"type":"object","properties":{"exchangeNm":{"type":"string"},"marketCode":{"type":"string"},"assetId":{"type":"string"},"candles":{"type":"array","items":{"$ref":"#/components/schemas/CandleDataVO"}},"candleCnt":{"type":"integer","format":"int32"}}},"ReqOhlcvData":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"marketCodes":{"type":"array","items":{"type":"string"},"maxItems":5,"minItems":1},"exchangeNm":{"type":"string"},"lastCandleDtm":{"type":"string"},"limit":{"type":"string"},"candleUnit":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResKoreaStandardQuoteChartInfoList":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/ResKoreaStandardQuoteChartInfoVO"}},"dataListCnt":{"type":"integer","format":"int32"}}},"ResKoreaStandardQuoteChartInfoVO":{"type":"object","properties":{"marketCode":{"type":"string"},"assetId":{"type":"string"},"exchangeNm":{"type":"string"},"candles":{"type":"array","items":{"$ref":"#/components/schemas/CandleDataVO"}},"candleCnt":{"type":"integer","format":"int32"}}},"ReqOhlcvRangeData":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"marketCodes":{"type":"array","items":{"type":"string"}},"exchangeNm":{"type":"string"},"lastCandleDtm":{"type":"string","maxLength":12,"minLength":0},"limit":{"type":"string"},"candleUnit":{"type":"string"},"startCandleDtm":{"type":"string","maxLength":12,"minLength":0},"endCandleDtm":{"type":"string","maxLength":12,"minLength":0}},"required":["tranDtime","tranNo"]},"ResOhlcvChartInfoList":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/ResOhlcvListVO"}},"dataListCnt":{"type":"integer","format":"int32"}}},"ResOhlcvListVO":{"type":"object","properties":{"marketCode":{"type":"string"},"assetId":{"type":"string"},"exchangeNm":{"type":"string"},"preClosedPrice":{"type":"string"},"firstCandleDt":{"type":"string"},"firstCandleTm":{"type":"string"},"candles":{"type":"array","items":{"$ref":"#/components/schemas/CandleDataVO"}},"candleCnt":{"type":"integer","format":"int32"}}},"ReqExchangeDailyClose":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"endDt":{"type":"string"},"count":{"type":"integer","format":"int32"},"exchangeNm":{"type":"string"},"marketCode":{"type":"string"}},"required":["tranDtime","tranNo"]},"ExchangeDailyCloseDataVO":{"type":"object","properties":{"date":{"type":"string"},"closePrice":{"type":"string"}}},"ResExchangeDailyClose":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"exchangeNm":{"type":"string"},"assetId":{"type":"string"},"marketCode":{"type":"string"},"dataList":{"type":"array","items":{"$ref":"#/components/schemas/ExchangeDailyCloseDataVO"}}}},"ReqAspTradingSignal":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"exchangeNm":{"type":"string"},"quoteCurrency":{"type":"string"},"upOrDown":{"type":"string"}},"required":["tranDtime","tranNo"]},"ResAspTradingSignal":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"exchangeNm":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ReqYearlyPriceSingle":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"assetId":{"type":"integer","format":"int64"},"exchangeNms":{"type":"array","items":{"type":"string"}}},"required":["tranDtime","tranNo"]},"ResPrevPrice":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"exchangeNm":{"type":"string"},"dataList":{"type":"array","items":{}}}},"ReqYearlyPriceBulk":{"type":"object","properties":{"tranDtime":{"type":"string","maxLength":14,"minLength":14},"tranNo":{"type":"string","minLength":1},"assetIds":{"type":"array","items":{"type":"integer","format":"int64"}},"exchangeNm":{"type":"string","minLength":1}},"required":["exchangeNm","tranDtime","tranNo"]},"AssetData":{"type":"object","properties":{"baseDtime":{"type":"string"},"symbol":{"type":"string"},"assetId":{"type":"string"},"companyList":{"type":"array","items":{"$ref":"#/components/schemas/TreasuryData"}}}},"ResCompanyCryptoTreasury":{"type":"object","properties":{"rspCode":{"type":"string"},"rspMessage":{"type":"string"},"dataList":{"type":"object","additionalProperties":{"$ref":"#/components/schemas/AssetData"}}}},"TreasuryData":{"type":"object","properties":{"rank":{"type":"string"},"companyName":{"type":"string"},"ticker":{"type":"string"},"mic":{"type":"string"},"marketName":{"type":"string"},"listingCountryCode":{"type":"string"},"holdingsQty":{"type":"string"}}},"Item":{"type":"object","properties":{"assetId":{"type":"integer","format":"int64"},"high":{"type":"string"},"low":{"type":"string"}}},"ResCoinHighLow":{"type":"object","properties":{"exchangeNm":{"type":"string"},"startDtm":{"type":"string"},"items":{"type":"array","items":{"$ref":"#/components/schemas/Item"}}}}},"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}}}}
+openapi: 3.1.0
+info:
+  title: Dayfin Data API
+  description: Dayfin market data API
+  version: v2
+servers:
+  - url: 'https://dev.dayfin.io'
+    description: Generated server url
+security:
+  - bearerAuth: []
+paths:
+  /v2/api/wallet/jump:
+    post:
+      tags:
+        - wallet-controller
+      operationId: selectNoticeDetail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqWalletDetail'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResWalletDetail'
+      description: ''
+  /v2/api/wallet/jumpCoin:
+    post:
+      tags:
+        - wallet-controller
+      operationId: getJumpCoinDetail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqWalletDetail'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResDepoWdrwJump'
+  /v2/api/trend/rank/score:
+    post:
+      tags:
+        - trend-data-controller
+      operationId: getTrendRankScore
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqTrendRank'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResTrendData'
+  /v2/api/trend/rank/count:
+    post:
+      tags:
+        - trend-data-controller
+      operationId: getTrendRankCount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqTrendRank'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResTrendData'
+  /v2/api/trend/fear-greed:
+    post:
+      tags:
+        - trend-data-controller
+      operationId: getFearGreedIndex
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqFearGreedIndex'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResFearGreedIndex'
+  /v2/api/trend/dasi:
+    post:
+      tags:
+        - trend-data-controller
+      operationId: getDASI
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqTrendData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResTrendData'
+  /v2/api/trend/daai:
+    post:
+      tags:
+        - trend-data-controller
+      operationId: getDAAI
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqTrendData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResTrendData'
+  /v2/api/trade/vwap:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqVwapTradePrice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqLatestData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapTrade'
+  /v2/api/trade/vwapCur:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqVwapCurTradePrice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqLatestData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapCurTrade'
+  /v2/api/trade/symbol/daily/latest:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqSymbolDailyTradeLatest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqSymbolDailyTradeLatest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResSymbolDailyTradeLatest'
+  /v2/api/trade/symbol/daily/history:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqSymbolDailyTradeHistory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqSymbolDailyTradeHistory'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResSymbolDailyTradeHistory'
+  /v2/api/trade/marketcode:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqMarketCodeTradePrice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqLatestDataForMarket'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ByMarketCode'
+  /v2/api/trade/exchange:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqExchangeTradePrice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqLatestData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResExchangeTrade'
+  /v2/api/trade/exchange/history:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqExchangeTradeHistory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeTradeHistory'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResExchangeTradeHistory'
+  /v2/api/trade/exchange/daily/latest:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqExchangeDailyTradeLatest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeDailyTradeLatest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResExchangeDailyTradeLatest'
+  /v2/api/trade/exchange/daily/history:
+    post:
+      tags:
+        - trade-data-controller
+      operationId: inqExchangeDailyTradeHistory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeDailyTradeHistory'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResExchangeDailyTradeHistory'
+  /v2/api/sync/orgReload:
+    post:
+      tags:
+        - sync-controller
+      operationId: orgReloadProc
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /v2/api/orderbook/snapshot:
+    post:
+      tags:
+        - order-book-controller
+      operationId: inqOrderBookSnapshot
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqOrderBookSnapshot'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResOrderBookSnapshot'
+  /v2/api/orderbook/aggregation:
+    post:
+      tags:
+        - order-book-controller
+      operationId: inqOrderBookAggregation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqOrderBookDelta'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResOrderBookDelta'
+  /v2/api/notice/list:
+    post:
+      tags:
+        - notice-controller
+      operationId: selectNoticeDetail_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoticeResponse'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/NoticeResponse'
+  /v2/api/news/coin:
+    post:
+      tags:
+        - news-controller
+      operationId: selectCoinNewsDetail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqCoinNews'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResCoinNews'
+  /v2/api/news/coin/issue:
+    post:
+      tags:
+        - news-controller
+      operationId: selectIssueCoinNewsDetail
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqCoinNews'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResCoinNews'
+  /v2/api/msg/sendTelegram:
+    post:
+      tags:
+        - message-controller
+      operationId: sendTelegramMessage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqTeleMsg'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+  /v2/api/coinRank/vwap/value:
+    post:
+      tags:
+        - coin-rank-controller
+      operationId: getVwapValue
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqRankVwapValue'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapValue'
+  /v2/api/coinRank/vwap/rateUpDwn:
+    post:
+      tags:
+        - coin-rank-controller
+      operationId: getVwapRateUpAndDown
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqRankUpDownMarket'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapRank'
+  /v2/api/coinRank/volume:
+    post:
+      tags:
+        - coin-rank-controller
+      operationId: getAmount
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeNm'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResRank'
+  /v2/api/coinRank/sharp/volume:
+    post:
+      tags:
+        - coin-rank-controller
+      operationId: getSharpVolume
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqRankInterval'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResRank'
+  /v2/api/coinRank/sharp/price:
+    post:
+      tags:
+        - coin-rank-controller
+      operationId: getSharpVolume_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqRankUPDown'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResRank'
+  /v2/api/coinRank/rateUpDwn:
+    post:
+      tags:
+        - coin-rank-controller
+      operationId: getRateUpAndDown
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqRankUpDownMarket'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResRank'
+  /v2/api/coinRank/askUp:
+    post:
+      tags:
+        - coin-rank-controller
+      operationId: getAskUp
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeNm'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResRank'
+  /v2/api/coinInfo/spot/etf/flow:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getSpotEtfFlow
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResSpotEtfFlow'
+  /v2/api/coinInfo/premium:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getPremium
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqPremium'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResPremium'
+  /v2/api/coinInfo/premiumAll:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getPremium_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqPremiumAll'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResPremiumAll'
+  /v2/api/coinInfo/market:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getCoinInfoForMarket
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqCoinInfoMarket'
+        required: true
+        description: ''
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResCoinInfoMarket'
+      description: 종목정보
+  /v2/api/coinInfo/marketCap:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: inqMarketCapRank
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqMarketCapRank'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResMarketCapRank'
+  /v2/api/coinInfo/market/vwap:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getMarketPairVwap
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqVwapCoinInfo'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResMarketVwap'
+  /v2/api/coinInfo/market/pair:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getMarketPair
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqCoinInfo'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResMarketPair'
+  /v2/api/coinInfo/map:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getCoinInfoMap
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqCoinInfoMap'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResCoinInfoMap'
+  /v2/api/coinInfo/krw/DWSoar:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getKrwDepoWdrwSoar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqKrwDepoWdrwSoar'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResKrwDepoWdrwSoar'
+  /v2/api/coinInfo/krw/DWIntst:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getKrwDepoWdrwIntensity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqKrwDepoWdrwIntensity'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResKrwDepoWdrwIntensity'
+  /v2/api/coinInfo/kdacs/classification:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getKdacsClassification
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqKdacsClassification'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResKdacsClassification'
+  /v2/api/coinInfo/hist/krw/DWIntst:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getHistKrwDepoWdrwIntensity
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+  /v2/api/coinInfo/hist/dom:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getHistBtcDominance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqHistBtcDominance'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+  /v2/api/coinInfo/hist/btcDomc:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getHistKBtcTradingShare
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqHistBtcDominance'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+  /v2/api/coinInfo/global/marketCap:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getGlobalMarketCap
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqGlobalMarketCap'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResGlobalMarketCap'
+  /v2/api/coinInfo/global/dailyTradeAmount:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getGlobalDailyTradeAmount
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResGlobalDailyTradeAmount'
+  /v2/api/coinInfo/exchange/rate:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: inqExchangeRate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeRate'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResExchangeRate'
+  /v2/api/coinInfo/dom:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getBtcDominance
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResBtcDominance'
+  /v2/api/coinInfo/btcDmnc:
+    post:
+      tags:
+        - coin-info-controller
+      operationId: getKBtcTradingShare
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeNm'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResTradingShare'
+  /v2/api/coin/ohlcv/vwap:
+    post:
+      tags:
+        - coin-ohlcv-controller
+      operationId: getOhlcvVwap
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqOhlcvVwapData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResOlcvVwapInfoList'
+  /v2/api/coin/ohlcv/vwap/list:
+    post:
+      tags:
+        - coin-ohlcv-controller
+      operationId: getOhlcvVwapList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqOhlcvListData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResOlcvVwapInfoList'
+  /v2/api/coin/ohlcv/vwap/close:
+    post:
+      tags:
+        - coin-ohlcv-controller
+      operationId: getOhlcvVwapClose
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqVwapDailyClose'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapDailyClose'
+  /v2/api/coin/ohlcv/vasset:
+    post:
+      tags:
+        - coin-ohlcv-controller
+      operationId: getOhlcvVasset
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqOhlcvVassetData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResOlcvVassetInfoList'
+  /v2/api/coin/ohlcv/exchange:
+  post:
+    tags:
+      - Coin OHLCV
+    summary: 거래소별 OHLCV 조회
+    description: 거래소와 마켓 코드를 기준으로 최신 또는 과거 OHLCV 캔들을 조회합니다.
+    operationId: getOhlcvExchange
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ReqOhlcvData'
+      required: true
+    responses:
+      '200':
+        description: 조회 처리 완료 (업무 오류는 rspCode로 반환)
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/ResKoreaStandardQuoteChartInfoList'
+  /v2/api/coin/ohlcv/exchange/vwap/list:
+    post:
+      tags:
+        - coin-ohlcv-controller
+      operationId: getOhlcvExchangeVwapList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqOhlcvRangeData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResOhlcvChartInfoList'
+  /v2/api/coin/ohlcv/exchange/list:
+    post:
+      tags:
+        - coin-ohlcv-controller
+      operationId: getOhlcvExchangeList
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqOhlcvListData'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResOhlcvChartInfoList'
+  /v2/api/coin/ohlcv/exchange/close:
+    post:
+      tags:
+        - coin-ohlcv-controller
+      operationId: getOhlcvExchangeClose
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqExchangeDailyClose'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResExchangeDailyClose'
+  /v2/api/asp/trading/signal:
+    post:
+      tags:
+        - asp-coin-insight-controller
+      operationId: getTradingSignal
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqAspTradingSignal'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResAspTradingSignal'
+  /v2/api/asp/coin/prevPrice:
+    post:
+      tags:
+        - asp-coin-insight-controller
+      operationId: getPreClosePrices
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqYearlyPriceSingle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResPrevPrice'
+  /v2/api/asp/coin/indicator/vwap:
+    post:
+      tags:
+        - asp-coin-insight-controller
+      operationId: sendVwapCoinIndicator
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqYearlyPriceBulk'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapValue'
+  /v2/api/asp/coin/indicator/exchange:
+    post:
+      tags:
+        - asp-coin-insight-controller
+      operationId: sendExchangeCoinIndicator
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqYearlyPriceBulk'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapValue'
+  /v2/api/asp/coin/indicator/all:
+    post:
+      tags:
+        - asp-coin-insight-controller
+      operationId: sendAllAndMarketCoinIndicator
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqYearlyPriceSingle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResVwapValue'
+  /v2/api/coinInfo/company/treasury:
+    get:
+      tags:
+        - coin-info-controller
+      operationId: getCompanyCryptoTreasury
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResCompanyCryptoTreasury'
+  '/v2.1/asp/coins/{assetId}/indicators/high-low':
+    get:
+      tags:
+        - asp-coin-indicator-rest-controller
+      operationId: getHighLowByAsset
+      parameters:
+        - name: assetId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: exchangeNm
+          in: query
+          required: false
+          schema:
+            type: string
+            default: ALL
+        - name: startDtm
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResCoinHighLow'
+  /v2.1/asp/coins/indicators/high-low:
+    get:
+      tags:
+        - asp-coin-indicator-rest-controller
+      operationId: getHighLow
+      parameters:
+        - name: assetIds
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+              format: int64
+        - name: exchangeNm
+          in: query
+          required: false
+          schema:
+            type: string
+            default: ALL
+        - name: startDtm
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResCoinHighLow'
+  /v2/api/article:
+    get:
+      tags:
+        - article-controller
+      operationId: sendContents
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+    put:
+      tags:
+        - article-controller
+      operationId: sendContents_2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+    post:
+      tags:
+        - article-controller
+      operationId: sendContents_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+    delete:
+      tags:
+        - article-controller
+      operationId: sendContents_3
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+    options:
+      tags:
+        - article-controller
+      operationId: sendContents_6
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+    head:
+      tags:
+        - article-controller
+      operationId: sendContents_5
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+    patch:
+      tags:
+        - article-controller
+      operationId: sendContents_4
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReqArticle'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ResArticle'
+components:
+  schemas:
+    ReqWalletDetail:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        sourUnit:
+          type: string
+        dwType:
+          type: string
+        assetSymbol:
+          type: string
+        assetSymbols:
+          type: array
+          items:
+            type: string
+        hourUnit:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResWalletDetail:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        contents:
+          type: array
+          items:
+            $ref: '#/components/schemas/WalletInfoDetail'
+    WalletInfoDetail:
+      type: object
+      properties:
+        nowCnt:
+          type: number
+        beforeCnt:
+          type: number
+        balcDtm:
+          type: string
+        exchangeCd:
+          type: string
+        symbol:
+          type: string
+        snapshotCnt:
+          type: number
+        type:
+          type: string
+        id:
+          type: integer
+          format: int32
+        blockNum:
+          type: integer
+          format: int32
+        fromAddress:
+          type: string
+        fromTag:
+          type: string
+        toAddress:
+          type: string
+        toTag:
+          type: string
+        value:
+          type: number
+        txHash:
+          type: string
+        blockTime:
+          type: string
+        price:
+          type: number
+        assetSymbol:
+          type: string
+    JumpInfo:
+      type: object
+      properties:
+        assetSymbol:
+          type: string
+        dwType:
+          type: string
+        sharpYn:
+          type: string
+        changeRate:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+    ResDepoWdrwJump:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/JumpInfo'
+    ReqTrendRank:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResTrendData:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ReqFearGreedIndex:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        count:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    FearGreedIndexData:
+      type: object
+      properties:
+        fgi:
+          type: string
+        fgiClassification:
+          type: string
+        date:
+          type: string
+    ResFearGreedIndex:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataListCnt:
+          type: integer
+          format: int32
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/FearGreedIndexData'
+    ReqTrendData:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ReqLatestData:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        marketCodes:
+          type: array
+          items:
+            type: string
+        sort:
+          type: string
+        quoteCurrency:
+          type: string
+        currCode:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResTickerOut:
+      type: object
+      properties:
+        assetSymbol:
+          type: string
+        assetId:
+          type: integer
+          format: int64
+        marketCode:
+          type: string
+        tradePrice:
+          type: string
+        open:
+          type: string
+        high:
+          type: string
+        low:
+          type: string
+        change:
+          type: string
+        changeRate:
+          type: string
+        flag:
+          type: string
+        accTradeValue:
+          type: string
+        accTradeVol:
+          type: string
+        tradeVol:
+          type: string
+        accBuyVol:
+          type: string
+        accSellVol:
+          type: string
+        highest52WeekPrice:
+          type: string
+        highest52WeekDate:
+          type: string
+        lowest52WeekPrice:
+          type: string
+        lowest52WeekDate:
+          type: string
+        preClosedPrice:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        exchangeTs:
+          type: integer
+          format: int64
+        premium:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/VwapPremiumEntryDto'
+    ResVwapTrade:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResTickerOut'
+        dataListCnt:
+          type: integer
+          format: int32
+    VwapPremiumEntryDto:
+      type: object
+      properties:
+        premium:
+          type: string
+        preminumRate:
+          type: string
+    ResVwapCurTrade:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+          properties:
+            empty:
+              type: boolean
+            first: {}
+            last: {}
+        dataListCnt:
+          type: integer
+          format: int32
+    ReqSymbolDailyTradeLatest:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        reqTp:
+          type: string
+        marketCode:
+          type: string
+        exchangeNms:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResSymbolDailyTradeLatest:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        reqTp:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeSymbolLatest'
+    TradeSymbolLatest:
+      type: object
+      properties:
+        marketCode:
+          type: string
+        exchangeNm:
+          type: string
+        accTradeValue:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        assetId:
+          type: integer
+          format: int64
+    ReqSymbolDailyTradeHistory:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        marketCode:
+          type: string
+        reqTp:
+          type: string
+        exchangeNms:
+          type: array
+          items:
+            type: string
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResSymbolDailyTradeHistory:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        reqTp:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeDateCategory'
+    TradeDateCategory:
+      type: object
+      properties:
+        tradeDate:
+          type: string
+        tradeData:
+          type: array
+          items: {}
+          properties:
+            empty:
+              type: boolean
+            first: {}
+            last: {}
+    ReqLatestDataForMarket:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNms:
+          type: array
+          items:
+            type: string
+        marketCode:
+          type: string
+        sort:
+          type: string
+        currCode:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ByMarketCode:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+          properties:
+            empty:
+              type: boolean
+            first: {}
+            last: {}
+        dataListCnt:
+          type: integer
+          format: int32
+    ResExchangeTrade:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+          properties:
+            empty:
+              type: boolean
+            first: {}
+            last: {}
+        dataListCnt:
+          type: integer
+          format: int32
+        quoteCurrency:
+          type: string
+    ReqExchangeTradeHistory:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        marketCode:
+          type: string
+        lastTranDtm:
+          type: string
+        count:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResExchangeTradeHistory:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        exchangeNm:
+          type: string
+        marketCode:
+          type: string
+        assetId:
+          type: string
+        lastTranDtm:
+          type: string
+        tradeCount:
+          type: integer
+          format: int32
+        trade:
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeHistory'
+    TradeHistory:
+      type: object
+      properties:
+        tradePrice:
+          type: string
+        tradeVol:
+          type: string
+        tradeTp:
+          type: string
+        tradeDtm:
+          type: string
+        sequenceId:
+          type: string
+        exchangeTs:
+          type: integer
+          format: int64
+        timestamp:
+          type: integer
+          format: int64
+    ReqExchangeDailyTradeLatest:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        reqTp:
+          type: string
+        exchangeNms:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResExchangeDailyTradeLatest:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        reqTp:
+          type: string
+        gaccTradeValue:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeLatest'
+    TradeLatest:
+      type: object
+      properties:
+        accTradeValue:
+          type: string
+        exchangeNm:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+    ReqExchangeDailyTradeHistory:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        reqTp:
+          type: string
+        exchangeNms:
+          type: array
+          items:
+            type: string
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResExchangeDailyTradeHistory:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        reqTp:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeData'
+    TradeData:
+      type: object
+      properties:
+        tradeDate:
+          type: string
+        tradeData:
+          type: array
+          items:
+            $ref: '#/components/schemas/TradeHistory'
+    ReqOrderBookSnapshot:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+          minLength: 1
+        marketCodes:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - exchangeNm
+        - marketCodes
+        - tranDtime
+        - tranNo
+    PriceSize:
+      type: object
+      properties:
+        price:
+          type: number
+        size:
+          type: number
+    ResOrderBookSnapshot:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SnapshotItem'
+        dataListCnt:
+          type: integer
+          format: int32
+    SnapshotItem:
+      type: object
+      properties:
+        assetId:
+          type: integer
+          format: int64
+        marketCode:
+          type: string
+        exchangeNm:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        totalAskSize:
+          type: number
+        totalBidSize:
+          type: number
+        asks:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceSize'
+        bids:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceSize'
+    ReqOrderBookDelta:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+          minLength: 1
+        marketCodes:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - exchangeNm
+        - marketCodes
+        - tranDtime
+        - tranNo
+    DeltaItem:
+      type: object
+      properties:
+        exchangeNm:
+          type: string
+        marketCode:
+          type: string
+        ts:
+          type: integer
+          format: int64
+        wsTs:
+          type: integer
+          format: int64
+        totalAskSize:
+          type: number
+        totalBidSize:
+          type: number
+        asks:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceSize'
+        bids:
+          type: array
+          items:
+            $ref: '#/components/schemas/PriceSize'
+    ResOrderBookDelta:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeltaItem'
+        dataListCnt:
+          type: integer
+          format: int32
+    NoticeInfo:
+      type: object
+      properties:
+        link:
+          type: string
+        exchangeCd:
+          type: string
+        exchangeNm:
+          type: string
+        category:
+          type: string
+        title:
+          type: string
+        regDt:
+          type: string
+        status:
+          type: string
+        statusRegDt:
+          type: string
+        code:
+          type: string
+        content:
+          type: string
+    NoticeResponse:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        contents:
+          type: array
+          items:
+            $ref: '#/components/schemas/NoticeInfo'
+    ReqCoinNews:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        assetSymbols:
+          type: array
+          items:
+            type: string
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResCoinNews:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ReqTeleMsg:
+      type: object
+      properties:
+        header:
+          type: string
+        msg:
+          type: string
+      required:
+        - header
+        - msg
+    ApiResponse:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+    ReqVwapCacheEvictData:
+      type: object
+      properties:
+        period:
+          type: string
+        priceId:
+          type: string
+        productId:
+          type: string
+        startKst:
+          type: string
+        endKst:
+          type: string
+    ResVwapCacheEvictData:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        deletedCount:
+          type: integer
+          format: int32
+        deletedKeys:
+          type: array
+          items:
+            type: string
+    MessageTranVO:
+      type: object
+      properties:
+        regDt:
+          type: string
+        seq:
+          type: integer
+          format: int64
+        sendTp:
+          type: string
+        trgtNm:
+          type: string
+        trgtInfo:
+          type: string
+        title:
+          type: string
+        msg:
+          type: string
+        stat:
+          type: string
+        regDtm:
+          type: string
+        updDtm:
+          type: string
+    CommResponse:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+    ReqExchangeCacheEvictData:
+      type: object
+      properties:
+        period:
+          type: string
+        priceId:
+          type: string
+        productId:
+          type: string
+        exchangeCd:
+          type: string
+        startKst:
+          type: string
+        endKst:
+          type: string
+    ReqRankVwapValue:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+      required:
+        - tranDtime
+        - tranNo
+    ResVwapValue:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ReqRankUpDownMarket:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        upOrDown:
+          type: string
+        quoteCurrency:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResVwapRank:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ReqExchangeNm:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        quoteCurrency:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResRank:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+        exchangeNm:
+          type: string
+    ReqRankInterval:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        minUnit:
+          type: string
+        exchangeNm:
+          type: string
+        quoteCurrency:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ReqRankUPDown:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        minUnit:
+          type: string
+        upOrDown:
+          type: string
+        exchangeNm:
+          type: string
+        quoteCurrency:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResSpotEtfFlow:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataListCnt:
+          type: integer
+          format: int32
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/SpotEtfFlowData'
+    SpotEtfFlowData:
+      type: object
+      properties:
+        date:
+          type: string
+        btcNetInflowKrw:
+          type: string
+        ethNetInflowKrw:
+          type: string
+        totalNetInflowKrw:
+          type: string
+    ReqPremium:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        pair:
+          type: string
+        assetSymbols:
+          type: array
+          items:
+            type: string
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    DataGroupByMarketCode:
+      type: object
+      properties:
+        assetSymbol:
+          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/PremiumData'
+    PremiumData:
+      type: object
+      properties:
+        date:
+          type: string
+        premium:
+          type: string
+        premiumRate:
+          type: string
+    ResPremium:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        pair:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataGroupByMarketCode'
+    ReqPremiumAll:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        assetSymbols:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    PremiumDataDTO:
+      type: object
+      properties:
+        assetSymbol:
+          type: string
+        premium:
+          type: string
+        premiumRate:
+          type: string
+    ResPremiumAll:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/PremiumDataDTO'
+        dataListCnt:
+          type: integer
+          format: int32
+        timestamp:
+          type: integer
+          format: int64
+    ReqCoinInfoMarket:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        assetIds:
+          type: array
+          items:
+            type: integer
+            format: int64
+      required:
+        - tranDtime
+        - tranNo
+    CoinDetail:
+      type: object
+      properties:
+        assetSymbol:
+          type: string
+        assetId:
+          type: integer
+          format: int64
+        englishName:
+          type: string
+        koreanName:
+          type: string
+        imgLink:
+          type: string
+        imgLinkHd:
+          type: string
+        marketCap:
+          type: string
+        totalSupply:
+          type: string
+        circulatingSupply:
+          type: string
+        profile:
+          type: string
+    ResCoinInfoMarket:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        exchangeNm:
+          type: string
+        dataListCnt:
+          type: integer
+          format: int32
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CoinDetail'
+    ReqMarketCapRank:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResMarketCapRank:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        exchangeNm:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        dataList:
+          type: array
+          items: {}
+    ReqVwapCoinInfo:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        assetSymbols:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    CoinVwapInfo:
+      type: object
+      properties:
+        assetSymbol:
+          type: string
+        assetId:
+          type: integer
+          format: int64
+        englishName:
+          type: string
+        koreanName:
+          type: string
+        marketCodes:
+          type: object
+          additionalProperties: {}
+          properties:
+            empty:
+              type: boolean
+        startDt:
+          type: string
+        endDt:
+          type: string
+    ResMarketVwap:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataListCnt:
+          type: integer
+          format: int32
+        activeAssetCnt:
+          type: integer
+          format: int32
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CoinVwapInfo'
+    ReqCoinInfo:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        quoteCurrency:
+          type: string
+        marketCodes:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    CoinInfo:
+      type: object
+      properties:
+        marketCode:
+          type: string
+        assetSymbol:
+          type: string
+        assetId:
+          type: integer
+          format: int64
+        koreanName:
+          type: string
+        englishName:
+          type: string
+        listedDt:
+          type: string
+        delistedDt:
+          type: string
+    ResMarketPair:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        exchangeNm:
+          type: string
+        exchangeImgLink:
+          type: string
+        activeMarketCnt:
+          type: integer
+          format: int32
+        dataListCnt:
+          type: integer
+          format: int32
+        quoteCurrency:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CoinInfo'
+    ReqCoinInfoMap:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        assetSymbols:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    CoinMap:
+      type: object
+      properties:
+        assetSymbol:
+          type: string
+        assetId:
+          type: integer
+          format: int64
+        englishName:
+          type: string
+        koreanName:
+          type: string
+        marketCodes:
+          type: array
+          items:
+            type: string
+        imgLink:
+          type: string
+        imgLinkHd:
+          type: string
+    ResCoinInfoMap:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataCnt:
+          type: integer
+          format: int32
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CoinMap'
+    ReqKrwDepoWdrwSoar:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        soarUnit:
+          type: string
+        dwType:
+          type: string
+        hourUnit:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResKrwDepoWdrwSoar:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dwType:
+          type: string
+        hourUnit:
+          type: string
+        depositSoar:
+          type: string
+        depositSharp:
+          type: string
+        withdrawSoar:
+          type: string
+        withdrawSharp:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+    ReqKrwDepoWdrwIntensity:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        hourUnit:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResKrwDepoWdrwIntensity:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        hourUnit:
+          type: string
+        dwPower:
+          type: string
+        depositRate:
+          type: string
+        withdrawRate:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+    ReqKdacsClassification:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        assetId:
+          type: string
+          minLength: 1
+      required:
+        - assetId
+        - tranDtime
+        - tranNo
+    RepresentativeAsset:
+      type: object
+      properties:
+        displayOrder:
+          type: integer
+          format: int32
+        assetId:
+          type: string
+        assetSymbol:
+          type: string
+    ResKdacsClassification:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        assetId:
+          type: string
+        assetSymbol:
+          type: string
+        majorCode:
+          type: string
+        majorName:
+          type: string
+        middleCode:
+          type: string
+        middleName:
+          type: string
+        minorCode:
+          type: string
+        minorName:
+          type: string
+        definition:
+          type: string
+        representativeAssets:
+          type: array
+          items:
+            $ref: '#/components/schemas/RepresentativeAsset'
+    ReqArticle:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        startDt:
+          type: string
+        endDt:
+          type: string
+        pressCds:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResArticle:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ReqHistBtcDominance:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ReqGlobalMarketCap:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        currCodes:
+          type: array
+          items:
+            type: string
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResGlobalMarketCap:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ResGlobalDailyTradeAmount:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        totalVolume24hKRW:
+          type: string
+        totalVolume24hYesterdayPercentageChange:
+          type: string
+    ReqExchangeRate:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        currCodes:
+          type: array
+          items:
+            type: string
+        startDt:
+          type: string
+        endDt:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ExchangeInfos:
+      type: object
+      properties:
+        date:
+          type: string
+        currListCnt:
+          type: integer
+          format: int32
+        currList:
+          type: array
+          items:
+            $ref: '#/components/schemas/RateInfo'
+    RateInfo:
+      type: object
+      properties:
+        currCode:
+          type: string
+        currName:
+          type: string
+        dealBaseRate:
+          type: string
+        change:
+          type: string
+        flag:
+          type: string
+    ResExchangeRate:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExchangeInfos'
+        dataListCnt:
+          type: integer
+          format: int32
+    ResBtcDominance:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        kbtcDominance:
+          type: string
+        gbtcDominance:
+          type: string
+    ResTradingShare:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        kbtcTradingShare:
+          type: string
+        kethTradingShare:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        exchangeNm:
+          type: string
+    ReqOhlcvVwapData:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        marketCode:
+          type: string
+        marketCodes:
+          type: array
+          items:
+            type: string
+        assetIds:
+          type: array
+          items:
+            type: integer
+            format: int64
+        currCodes:
+          type: array
+          items:
+            type: string
+        lastCandleDtm:
+          type: string
+        limit:
+          type: string
+        candleUnit:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResOlcvVwapInfoList:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResOlcvVwapInfoVO'
+        dataListCnt:
+          type: integer
+          format: int32
+    ResOlcvVwapInfoVO:
+      type: object
+      properties:
+        currCode:
+          type: string
+        marketCode:
+          type: string
+        assetId:
+          type: string
+        candles:
+          type: array
+          items:
+            $ref: '#/components/schemas/VwapCandleDataVO'
+        candleCnt:
+          type: integer
+          format: int32
+    VwapCandleDataVO:
+      type: object
+      properties:
+        open:
+          type: string
+        high:
+          type: string
+        low:
+          type: string
+        close:
+          type: string
+        accTradeVol:
+          type: string
+        accTradeValue:
+          type: string
+        candleDateTimeKst:
+          type: string
+        timestamp:
+          type: string
+        updateTs:
+          type: string
+    ReqOhlcvListData:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        marketCodes:
+          type: array
+          items:
+            type: string
+        exchangeNm:
+          type: string
+        lastCandleDtm:
+          type: string
+          maxLength: 12
+          minLength: 0
+        limit:
+          type: string
+        candleUnit:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ReqVwapDailyClose:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        endDt:
+          type: string
+        count:
+          type: integer
+          format: int32
+        assetSymbol:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResVwapDailyClose:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        assetId:
+          type: string
+        assetSymbol:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/VwapDailyCloseDataVO'
+    VwapDailyCloseDataVO:
+      type: object
+      properties:
+        date:
+          type: string
+        closePrice:
+          type: string
+    ReqOhlcvVassetData:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        marketCode:
+          type: string
+        exchangeNms:
+          type: array
+          items:
+            type: string
+        lastCandleDtm:
+          type: string
+        limit:
+          type: string
+        candleUnit:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    CandleDataVO:
+      type: object
+      properties:
+        open:
+          type: string
+        high:
+          type: string
+        low:
+          type: string
+        close:
+          type: string
+        accTradeVol:
+          type: string
+        candleDateTimeKst:
+          type: string
+        timestamp:
+          type: string
+        updateTs:
+          type: string
+    ResOlcvVassetInfoList:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResOlcvVassetInfoVO'
+        dataListCnt:
+          type: integer
+          format: int32
+    ResOlcvVassetInfoVO:
+      type: object
+      properties:
+        exchangeNm:
+          type: string
+        marketCode:
+          type: string
+        assetId:
+          type: string
+        candles:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandleDataVO'
+        candleCnt:
+          type: integer
+          format: int32
+    ReqOhlcvData:
+      type: object
+      description: 거래소별 OHLCV 조회 요청
+      required:
+        - tranDtime
+        - tranNo
+        - marketCodes
+        - exchangeNm
+      properties:
+        tranDtime:
+          type: string
+          description: 요청 거래일시 (yyyyMMddHHmmss)
+          example: '20261014143000'
+        tranNo:
+          type: string
+          description: 요청별 고유 거래번호
+          example: '202610141430000001'
+        marketCodes:
+          type: array
+          description: 조회할 마켓 코드 목록 (1~5개)
+          minItems: 1
+          maxItems: 5
+          example:
+            - KRW-BTC
+          items:
+            type: string
+        exchangeNm:
+          type: string
+          description: 거래소명
+          example: upbit
+          enum:
+            - upbit
+            - bithumb
+            - coinone
+            - digitalx
+            - gopax
+        lastCandleDtm:
+          type: string
+          description: 조회 기준 마지막 캔들 일시 (yyyyMMddHHmm). 생략하면 최신 확정 캔들을 기준으로 조회합니다.
+          example: '202610141430'
+        limit:
+          type: string
+          description: 마켓별 요청 캔들 수 (0~100, 기본값 1)
+          default: '1'
+          example: '100'
+        candleUnit:
+          type: string
+          description: '캔들 주기 (I: 1분, H: 1시간, D: 1일, W: 1주, M: 1개월)'
+          default: I
+          example: I
+          enum:
+            - I
+            - H
+            - D
+            - W
+            - M
+    ResKoreaStandardQuoteChartInfoList:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResKoreaStandardQuoteChartInfoVO'
+        dataListCnt:
+          type: integer
+          format: int32
+    ResKoreaStandardQuoteChartInfoVO:
+      type: object
+      properties:
+        marketCode:
+          type: string
+        assetId:
+          type: string
+        exchangeNm:
+          type: string
+        candles:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandleDataVO'
+        candleCnt:
+          type: integer
+          format: int32
+    ReqOhlcvRangeData:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        marketCodes:
+          type: array
+          items:
+            type: string
+        exchangeNm:
+          type: string
+        lastCandleDtm:
+          type: string
+          maxLength: 12
+          minLength: 0
+        limit:
+          type: string
+        candleUnit:
+          type: string
+        startCandleDtm:
+          type: string
+          maxLength: 12
+          minLength: 0
+        endCandleDtm:
+          type: string
+          maxLength: 12
+          minLength: 0
+      required:
+        - tranDtime
+        - tranNo
+    ResOhlcvChartInfoList:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResOhlcvListVO'
+        dataListCnt:
+          type: integer
+          format: int32
+    ResOhlcvListVO:
+      type: object
+      properties:
+        marketCode:
+          type: string
+        assetId:
+          type: string
+        exchangeNm:
+          type: string
+        preClosedPrice:
+          type: string
+        firstCandleDt:
+          type: string
+        firstCandleTm:
+          type: string
+        candles:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandleDataVO'
+        candleCnt:
+          type: integer
+          format: int32
+    ReqExchangeDailyClose:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        endDt:
+          type: string
+        count:
+          type: integer
+          format: int32
+        exchangeNm:
+          type: string
+        marketCode:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ExchangeDailyCloseDataVO:
+      type: object
+      properties:
+        date:
+          type: string
+        closePrice:
+          type: string
+    ResExchangeDailyClose:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        exchangeNm:
+          type: string
+        assetId:
+          type: string
+        marketCode:
+          type: string
+        dataList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ExchangeDailyCloseDataVO'
+    ReqAspTradingSignal:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        exchangeNm:
+          type: string
+        quoteCurrency:
+          type: string
+        upOrDown:
+          type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResAspTradingSignal:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        exchangeNm:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ReqYearlyPriceSingle:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        assetId:
+          type: integer
+          format: int64
+        exchangeNms:
+          type: array
+          items:
+            type: string
+      required:
+        - tranDtime
+        - tranNo
+    ResPrevPrice:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        exchangeNm:
+          type: string
+        dataList:
+          type: array
+          items: {}
+    ReqYearlyPriceBulk:
+      type: object
+      properties:
+        tranDtime:
+          type: string
+          maxLength: 14
+          minLength: 14
+        tranNo:
+          type: string
+          minLength: 1
+        assetIds:
+          type: array
+          items:
+            type: integer
+            format: int64
+        exchangeNm:
+          type: string
+          minLength: 1
+      required:
+        - exchangeNm
+        - tranDtime
+        - tranNo
+    AssetData:
+      type: object
+      properties:
+        baseDtime:
+          type: string
+        symbol:
+          type: string
+        assetId:
+          type: string
+        companyList:
+          type: array
+          items:
+            $ref: '#/components/schemas/TreasuryData'
+    ResCompanyCryptoTreasury:
+      type: object
+      properties:
+        rspCode:
+          type: string
+        rspMessage:
+          type: string
+        dataList:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/AssetData'
+    TreasuryData:
+      type: object
+      properties:
+        rank:
+          type: string
+        companyName:
+          type: string
+        ticker:
+          type: string
+        mic:
+          type: string
+        marketName:
+          type: string
+        listingCountryCode:
+          type: string
+        holdingsQty:
+          type: string
+    Item:
+      type: object
+      properties:
+        assetId:
+          type: integer
+          format: int64
+        high:
+          type: string
+        low:
+          type: string
+    ResCoinHighLow:
+      type: object
+      properties:
+        exchangeNm:
+          type: string
+        startDtm:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
