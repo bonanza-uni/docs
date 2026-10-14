@@ -957,7 +957,7 @@ paths:
         required: true
       responses:
         '200':
-          description: 조회 처리 완료 (업무 오류는 rspCode로 반환)
+          description:
           content:
             '*/*':
               schema:
