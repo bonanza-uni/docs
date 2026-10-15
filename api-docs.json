@@ -4,7 +4,7 @@ info:
   description: Dayfin market data API
   version: v2
 servers:
-  - url: 'https://dev.dayfin.io'
+  - url: 'https://api.dayfin.io'
     description: Generated server url
 security:
   - bearerAuth: []
